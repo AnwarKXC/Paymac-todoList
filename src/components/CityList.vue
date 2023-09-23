@@ -1,6 +1,6 @@
 <template>
   <div class="pt-4 mb-8 relative">
-    <input type="text" v-model=" searchQuery " @input=" getCities " placeholder="Search for a Todo"
+    <input type="text" v-model=" searchQuery " @input=" getCities " :placeholder="$t('Search for a Todo')"
       class="py-2 px-3 text-weather-secondary font-medium  w-full placeholder:text-weather-secondary bg-[#9952]  border-b-2 focus:border-weather-secondary focus:outline-none focus:shadow-[0px_1px_0_0_#004E71] rounded " />
   </div>
   <div v-for="  city  in filterdCities " :key=" city.id ">

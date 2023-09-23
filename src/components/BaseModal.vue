@@ -8,7 +8,7 @@
             <slot />
             <div class="flex gap-2  justify-start ">
               <button class="text-white bg-red-700 " @click="$emit( 'close-modal' )">
-                Close
+                {{$t('Close')}}
               </button>
 
             </div>

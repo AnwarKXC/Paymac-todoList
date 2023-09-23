@@ -3,12 +3,16 @@
     <nav class="container flex flex-col sm:flex-row items-center gap-4 text-white py-6">
       <div class="flex items-center justify-center gap-3 font-semibold text-weather-secondary">
         <i class="fa-solid fa-list text-2xl"></i>
-        <p class="text-2xl ">Todo List</p>
+        <p class="text-2xl ">{{$t('Todo List')}}</p>
+        <div class="flex gap-2 ml-4">
+          <button @click="ar"> AR </button>
+          <button @click="en"> EN </button>
+        </div>
       </div>
       <div class="flex gap-3 flex-1 justify-end">
         <div class="text-xl sm:block hidden
         text-weather-secondary 
-        duration-150 cursor-pointer" @click=" toggleModal ">New Todo
+        duration-150 cursor-pointer" @click=" toggleModal ">{{$t('New Todo')}}
           <i class="fa-regular fa-square-plus"></i>
         </div>
         <div class="text-xl sm:hidden
@@ -20,12 +24,12 @@
       <BaseModal :modalActive=" modalActive " @close-modal=" toggleModal ">
         <h1
           class="mb-8 text-center drop-shadow border-b text-weather-secondary  font-medium text-xl ">
-          New Todo</h1>
+          {{$t('New Todo')}}</h1>
         <form @submit.prevent=" addCity " class=" flex  gap-4 flex-col relative">
-          <input type="text" name="I need to ... " placeholder="I need to ..." v-model=" newTask "
+          <input type="text"  :placeholder="$t('I need to ...')" v-model=" newTask "
             class=" border-2 border-zinc-200 px-2 py-1.5 rounded ">
           <button class="text-white bg-green-700 max-w-[100px] px-4 self-end ">
-            Add
+            {{$t('Add')}}
           </button>
         </form>
       </BaseModal>
@@ -71,5 +75,15 @@ const addCity = async () => {
 const modalActive = ref( null )
 const toggleModal = () => {
   modalActive.value = !modalActive.value
+}
+function ar () {
+  localStorage.setItem( 'lang', 'ar' )
+  location.reload()
+
+}
+function en () {
+  localStorage.setItem( 'lang', 'en' )
+  location.reload()
+
 }
 </script>

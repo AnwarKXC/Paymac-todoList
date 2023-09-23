@@ -9,13 +9,12 @@
     </div>
   </div>
   <BaseModal :modalActive=" modalActive " @close-modal=" toggleModal ">
-    <h1 class="mb-8 text-center drop-shadow border-b text-weather-secondary  font-medium text-xl ">Edit
-      Todo</h1>
+    <h1 class="mb-8 text-center drop-shadow border-b text-weather-secondary  font-medium text-xl ">{{$t('Edit Todo')}}</h1>
     <form @submit.prevent=" editHandler(city) " class=" flex  gap-4 flex-col relative">
       <input type="text" name="I need to ... " placeholder="I need to ..." v-model=" city.title " 
         class=" border-2 border-zinc-200 px-2 py-1.5 rounded ">
       <button class="text-white bg-green-700 max-w-[100px] px-4 self-end ">
-        Edit
+       {{$t('Edit')}}
       </button>
     </form>
   </BaseModal>
