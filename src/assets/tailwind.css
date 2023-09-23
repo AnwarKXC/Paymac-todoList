@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button {
+   @apply bg-weather-secondary text-white px-3 py-1 rounded hover:opacity-80
+}
