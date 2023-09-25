@@ -1,12 +1,14 @@
 <template>
   <header class="sticky top-0 bg-weather-primary shadow-lg">
     <nav class="container flex flex-col sm:flex-row items-center gap-4 text-white py-6">
-      <div class="flex items-center justify-center gap-3 font-semibold text-weather-secondary">
-        <i class="fa-solid fa-list text-2xl"></i>
-        <p class="text-2xl ">{{$t('Todo List')}}</p>
-        <div class="flex gap-2 ml-4">
-          <button @click="ar"> AR </button>
-          <button @click="en"> EN </button>
+      <div class="flex gap-8 font-semibold text-weather-secondary">
+        <div class="flex gap-2">
+          <i class="fa-solid fa-list text-2xl"></i>
+          <p class="text-2xl ">{{$t('Todo List')}}</p>
+        </div>
+        <div >
+          <button @click="ar" v-if="lang==='en'"> AR </button>
+          <button @click="en"  v-if=" lang === 'ar' "> EN </button>
         </div>
       </div>
       <div class="flex gap-3 flex-1 justify-end">
@@ -15,7 +17,7 @@
         duration-150 cursor-pointer" @click=" toggleModal ">{{$t('New Todo')}}
           <i class="fa-regular fa-square-plus"></i>
         </div>
-        <div class="text-xl sm:hidden
+        <div class="text-3xl sm:hidden
         text-weather-secondary 
         duration-150 cursor-pointer" @click=" toggleModal ">
           <i class="fa-regular fa-square-plus "></i>
@@ -42,6 +44,7 @@ import { uid } from "uid"
 import { ref } from "vue"
 import BaseModal from "./BaseModal.vue"
 const newTask = ref( '' )
+const lang = localStorage.getItem("lang")
 const addCity = async () => {
 
 
