@@ -9,6 +9,7 @@
   "dependencies": {
     "@apollo/client": "^3.8.4",
     "@vue/apollo-composable": "^4.0.0-beta.11",
+    "express": "^4.18.2",
     "graphql": "^16.8.1",
     "graphql-tag": "^2.12.6",
     "tailwindcss-rtl": "^0.9.0",
